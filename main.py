@@ -16,10 +16,13 @@ headers = {
     "Content-Type": "application/json"
 }
 
-requests.patch(
+response = requests.patch(
     url,
     headers=headers,
     json={"name": new_name}
 )
+
+print("Status:", response.status_code)
+print("Response:", response.text)
 
 print("Canal actualizado:", new_name)
